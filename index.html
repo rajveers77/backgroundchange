@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <div class="container">
+          <div class="bg">
+            <img class="id-1" src="https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80" alt="">
+            <img class="id-2" src="https://images.unsplash.com/photo-1546027658-7aa750153465?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&q=80" alt="">
+            <img class="id-3" src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="">
+          </div>
+          <a href="#" class="text">
+            <h1>
+              <span data-id="1">Website</span>
+              <span data-id="2">APP</span>
+              <span data-id="3">UI/UX</span>
+              <span id="line"></span>
+            </h1>
+          </a>
+          <h1 class="mobile-text">Website APP UI/UX</h1>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum labore quaerat at eos. Modi aut nam repudiandae aperiam odio atque!</p>
+          <button>Click ME</button>
+        </div>
+      </section>
+      <script>
+          const parentBgEl = document.querySelector(".bg");
+const childEls = document.querySelectorAll(".container .text span");
+const textEl = document.querySelector(".text");
+const lineEl = document.querySelector("#line");
+
+childEls.forEach((el) => {
+  el.addEventListener("mouseover", (e) => {
+    const id = el.getAttribute("data-id");
+    const bgEl = parentBgEl.querySelector(`.id-${id}`);
+
+    parentBgEl.querySelectorAll("img").forEach((img) => {
+      img.style.display = "none";
+      img.style.animation = "";
+    });
+    bgEl.style.display = "block";
+    bgEl.style.animation = "anima 1s ease forwards";
+
+    // line animation
+    const cords = el.getBoundingClientRect();
+    const textCords = textEl.getBoundingClientRect();
+
+    lineEl.style.width = cords.width + "px";
+    lineEl.style.left = cords.left - textCords.left + "px";
+  });
+});
+
+      </script>
+</body>
+</html>

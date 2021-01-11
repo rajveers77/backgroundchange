@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: "Open Sans";
+  font-weight: 300;
+}
+section {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-self: flex-start;
+}
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  z-index: -1;
+  background-color: rgb(0, 0, 0);
+}
+.bg::after {
+  content: "";
+  left: 0;
+  top: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.589);
+}
+
+a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.mobile-text {
+  display: none;
+}
+h1 {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  font-size: 40px;
+  letter-spacing: 10px;
+  color: whitesmoke;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.container h1 span {
+  margin-right: 50px;
+  display: inline-block;
+}
+#line {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 15px;
+  width: 245px;
+  /* border: 1px solid royalblue; */
+  pointer-events: none;
+  z-index: -1;
+  transition: 0.5s ease all;
+}
+.bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.container p {
+  color: whitesmoke;
+  font-size: 20px;
+  max-width: 600px;
+  margin-top: 20px;
+  line-height: 30px;
+}
+button {
+  background-color: white;
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 8px;
+  border: none;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+@keyframes anima {
+  0% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+@media only screen and (max-width: 768px) {
+  .mobile-text {
+    display: block;
+  }
+  .text {
+    display: none;
+  }
+}
